@@ -23,7 +23,7 @@ int main(void)
     {
         for(j=i+1;j<n;j++)
         {
-            if(strcmp(*(str+i),*(str+j))>0)
+            if(strcmp(*(str+i),*(str+j))!=0)
             {
                 strlwr(*(str+i));
                 strlwr(*(str+j));
