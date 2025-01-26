@@ -1,27 +1,22 @@
 #include<stdio.h>
-int isPalindrome(int);
-int rev_num(int,int);
+int rev = 0;
+void pal(int);
 int main(void)
 {
     int n;
-    printf("enter a number : ");
     scanf("%d",&n);
-    if(isPalindrome(n))
-        printf("\n%d is Palindrome..!!",n);
+    pal(n);
+    if(n==rev)
+    {
+        printf("Palindrome");
+    }
     else
-        printf("\n%d is Not Palindrome..!!",n);
+    {
+        printf("Not");
+    }
 }
-int isPalindrome(int num)
+void pal(int x)
 {
-    if(num<0)
-        return 0;
-    else 
-        return num == rev_num(num,0);
-}
-int rev_num(int num,int rev)
-{
-    if(num==0)
-        return rev;
-    else
-        return rev_num(num/10,rev*10 + num%10);
+    rev = rev*10 + x%10;
+    pal(x/10);
 }
